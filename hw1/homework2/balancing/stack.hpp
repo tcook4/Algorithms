@@ -12,20 +12,17 @@ template<class T>
 
 class Stack{
 
-private:
-  T arr[MAXSIZE]; // the actual stack
-  int topIndex;   // index of the top element
-
 public:
-  Stack(){
-    topIndex = -1; // constructor
-  };
-  ~Stack(){};      // destructor
+    Stack(){topIndex = -1;}  // consructor
+    ~Stack(){}               // destructor
+    void push(T c);          // push c to the list
+    T top();                 // return the top element in the stack
+    void pop();              // remove the top element in the stack
+    //Stack remove();        // returns the top of the stack and removes it
+    int size();              // returns the size of the stack
+    void display();          // display the stack in stdout
 
-  void push(T c);  // push c to the list
-  T top();         // return the top element in the stack
-  void pop();      // remove the top element in the stack
-  // you may want a method that returns the top of the stack and removes it, feel free to add it
-  int size();      // returns the size of the stack
-  void display();  // display the stack in stdout
+private:
+    T arr[MAXSIZE]; // the actual stack
+    int topIndex;   // index of the top element
 };
