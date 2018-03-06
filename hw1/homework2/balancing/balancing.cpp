@@ -24,11 +24,10 @@ int main()
         {
             solution = false;
         }
-        // The input file is in the format "expected_solution expression"
-        // so variable solution tells you whether 'expression' is balanced or not
 
-
-
+        // If we find an open bracket, parenthesis or brace, push it to the stack
+        // If we find a closing bracket, parenthesis or brace, comapre it to the top if the stack
+        // Pop the stack if we have a match, else, the expression is unbalanced
         for(int i=0; i<s.length(); ++i)
         {
             if ((s[i] == '(') || (s[i] == '[') || (s[i] == '{'))
