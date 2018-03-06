@@ -10,7 +10,12 @@
 using namespace std;
 template<class T>
 
-class Stack {
+class Stack
+{
+
+private:
+    T arr[MAXSIZE]; // the actual stack
+    int topIndex;   // index of the top element
 
 public:
     Stack(){topIndex = -1;}  // consructor
@@ -23,8 +28,4 @@ public:
     inline T remove(){       // returns the top of the stack and removes it
         topIndex--;
         return arr[topIndex+1];}
-
-private:
-    T arr[MAXSIZE]; // the actual stack
-    int topIndex;   // index of the top element
 };
