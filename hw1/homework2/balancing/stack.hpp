@@ -10,7 +10,7 @@
 using namespace std;
 template<class T>
 
-class Stack{
+class Stack {
 
 public:
     Stack(){topIndex = -1;}  // consructor
@@ -18,9 +18,11 @@ public:
     void push(T c);          // push c to the list
     T top();                 // return the top element in the stack
     void pop();              // remove the top element in the stack
-    //Stack remove();        // returns the top of the stack and removes it
     int size();              // returns the size of the stack
     void display();          // display the stack in stdout
+    inline T remove(){       // returns the top of the stack and removes it
+        topIndex--;
+        return arr[topIndex+1];}
 
 private:
     T arr[MAXSIZE]; // the actual stack

@@ -28,33 +28,38 @@ int precedence(char c)
 }
 
 
-int main(){
+int main()
+{
     freopen("input_infix2postfix.txt", "r", stdin);
     string input;
     string solution;
     int line_counter = 0;
-    char top;
 
     while(cin >> solution)
     {
         cin >> input;
         Stack<char> stack;
         string result;
-        //The input file is in the format "expected_solution infix_expression", where expected_solution is the infix_expression in postfix format
 
+        // Iterate through our expression
         for(int i=0; i<input.length(); ++i)
         {
+            // If the character is an operand, append it to the result
             if (isOperand(input[i]))
             {
                 result+=input[i];
             }
 
+            // Operators get pushed to the stack
             else
             {
+                // If we find an open parenthesis, push it to the stack
                 if (input[i] == '(')
                 {
                     stack.push(input[i]);
                 }
+
+                // If we find a closing parenthesis, pop the stack until we find the partner
                 else if (input[i] == ')')
                 {
                     while (stack.top() != '(')
@@ -65,6 +70,8 @@ int main(){
                     // Pop the '(' off the stack after we find it
                     stack.pop();
                 }
+
+                // Pop operators with higher precidence before pushing
                 else if ((precedence(stack.top())) >= (precedence(input[i])))
                 {
                     while (((precedence(stack.top())) >= (precedence(input[i]))) && (stack.size() >= 0))
@@ -73,25 +80,20 @@ int main(){
                     }
                     stack.push(input[i]);
                 }
+
+                // Otherwise, push the operator
                 else
                 {
                     stack.push(input[i]);
                 }
             }
-
-
-            // WRITE CODE HERE to store in 'result' the postfix transformation of 'input'
-            cout << "result is now : " << result << endl;
         }
+
+        // Finish by popping all remaining operators
         while (stack.size() >= 0)
         {
-            top = stack.top();
-            result+=top;
-            stack.pop();
+            result+=stack.remove();
         }
-
-        // You need to do some extra stuff here to store in 'result' the postfix transformation of 'input'
-
 
         // Checking whether the result you got is correct
         if(solution == result)

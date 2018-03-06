@@ -30,7 +30,11 @@ int Stack<T>::size()
 template<class T>
 void Stack<T>::display()
 {
-    cout << arr[topIndex];
+    int i;
+    for (i = topIndex; i >=0; i--)
+    {
+        cout << arr[i] << " ";
+    }
 }
 
 template class Stack<char>;
