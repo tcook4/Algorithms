@@ -1,3 +1,9 @@
+/* Author: Tyler Cook
+ * Date: March 7th, 2018
+ * UNT CSCE 3110 - Homework 2
+ * Description: This program evaluates expressions given in postfix format.
+ */
+
 #include "stack.hpp"
 
 using namespace std;
@@ -14,14 +20,17 @@ int main()
     {
         cin >> s;
         Stack<int> stack;
-        // The input file is in the format "expected_solution postfix_expression"
 
+        // Iterate through our expression
         for(int i=0; i<s.length(); ++i)
         {
+            // Push operands to the stack
            if ((s[i]-48 >= 0) && (s[i]-48 <= 9))
            {
                stack.push(s[i]-48);
            }
+
+           // If operator, pop operands and evaluate, and push result back on to stack
            else
            {
                switch(s[i])

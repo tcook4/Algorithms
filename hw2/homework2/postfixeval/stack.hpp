@@ -4,13 +4,17 @@
 #include<cmath>
 #include<cstdio>
 
-// Ideally this would not be a huge number, you could also use a vector
 #define MAXSIZE 100000
 
 using namespace std;
+
 template<class T>
 
-class Stack {
+class Stack
+{
+private:
+    T arr[MAXSIZE]; // the actual stack
+    int topIndex;   // index of the top element
 
 public:
     Stack(){topIndex = -1;}  // consructor
@@ -23,8 +27,4 @@ public:
     inline T remove(){       // returns the top of the stack and removes it
         topIndex--;
         return arr[topIndex+1];}
-
-private:
-    T arr[MAXSIZE]; // the actual stack
-    int topIndex;   // index of the top element
 };

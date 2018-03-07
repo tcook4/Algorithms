@@ -1,3 +1,10 @@
+/* Author: Tyler Cook
+ * Date: March 7th, 2018
+ * UNT CSCE 3110 - Homework 2
+ * Description: This program detectes parenthesis "()", brackets "[]" and braces "{}", and
+ * indicates weather the expression given is balanced or not.
+ */
+
 #include "stack.hpp"
 
 using namespace std;

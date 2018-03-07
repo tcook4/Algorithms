@@ -1,3 +1,9 @@
+/* Author: Tyler Cook
+ * Date: March 7th, 2018
+ * UNT CSCE 3110 - Homework 2
+ * Description: This program converts infix expressions into postfix format.
+ */
+
 #include "stack.hpp"
 
 using namespace std;
