@@ -14,10 +14,6 @@ int main()
     FILE * fpTest;
 
     fpTest = freopen("input_balanced.txt", "r", stdin);
-    if (fpTest == NULL)
-    {
-        cout << "filefiail\n";
-    }
     string s,r;
     int line_counter;
 
