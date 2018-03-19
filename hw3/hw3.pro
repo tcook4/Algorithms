@@ -8,3 +8,6 @@ SOURCES += \
 
 HEADERS += \
     avl.hpp
+
+DISTFILES += \
+    old
