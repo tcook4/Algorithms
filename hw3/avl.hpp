@@ -8,6 +8,5 @@ struct AvlNode {
         element = ele;
         left = lt;
         right = rt;
-        height = 0;
     }
 };
