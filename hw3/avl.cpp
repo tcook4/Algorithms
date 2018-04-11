@@ -90,7 +90,7 @@ void print(AvlNode *root) {
  * END Print methods, do not change
  */
 
-// Begin edited files
+// Begin edited methods
 // Insert a value to the tree
 void insert(const int & info, AvlNode * & root)
 {
